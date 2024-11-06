@@ -35,7 +35,7 @@ void selectionSort(Produto *p, int size);
 
 void menu();
 
-void banner(char s[]);
+void banner(const char s[]);
 void linhaDiv(int n, char c);
 
 void infoProduto(Produto p, int incluirN);

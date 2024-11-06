@@ -214,7 +214,7 @@ void menu() {
     }
 }
 
-void banner(char s[]) {
+void banner(const char s[]) {
     // funcao simples pra evitar repetir esse loop sempre que quiser formatar
     // texto com caracteres envolta
     size_t sTamanho = strlen(s);
