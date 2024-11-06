@@ -35,10 +35,10 @@ typedef struct {
 
 } Sistema;
 
-void trocar(Produto *a, Produto *b);
+void trocarProdutos(Produto *a, Produto *b);
 void ordenarSelecao(Produto *p, int size);
 
-int menu();
+int menu(Sistema *sistemaMercado, Carrinho *carrinhoMercado);
 
 void banner(const char s[]);
 void linhaDiv(int n, char c);
@@ -56,8 +56,5 @@ void cadastrarProduto(Sistema *s, Produto p);
 
 void finalizarCompras(Carrinho *c);
 float obterTotal(Carrinho *c);
-
-Sistema sistemaMercado;
-Carrinho carrinhoMercado;
 
 #endif
