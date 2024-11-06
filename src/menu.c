@@ -87,7 +87,14 @@ int menu() {
             printf(">> ");
 
             fgets(regiBuffer, MAX_BUFFER, stdin);
+
             resultadoProd = sscanf(regiBuffer, "%f", &novoDesc);
+
+            if (novoDesc < 0 || novoDesc > 1) {
+                teveErro = 1;
+                printf(
+                    "\nPor favor insira um valor apropriado para o desconto\n");
+            }
 
             if (resultadoProd == 1) {
                 novoProduto.desconto = novoDesc;
