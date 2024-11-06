@@ -1,7 +1,6 @@
 #include "main.h"
 
 int main() {
-    rodando = 1;
     carrinhoMercado.quantidade = 0;
     sistemaMercado.quantidade = 0;
 
