@@ -64,7 +64,7 @@ void menu() {
     // 'atoi' converte ascii para integer, assim o input de fget pode ser usado
     // pra comparar os numeros em switch
     switch (atoi(escolhaFluxo)) {
-        case 1:
+        case 1:;
             // definir variaveis que vao compor o novo produto
             char regiBuffer[MAX_BUFFER];
             char novoNome[MAX_NOME];
@@ -150,7 +150,7 @@ void menu() {
 
             break;
 
-        case 2:
+        case 2:;
             char idBuffer[MAX_BUFFER];
             int idNovoCarrinho;
 
@@ -167,7 +167,7 @@ void menu() {
 
             break;
 
-        case 3:
+        case 3:;
             char idRemoverBuffer[MAX_BUFFER];
             int idRemover;
 
