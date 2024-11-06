@@ -161,7 +161,8 @@ void removerDoCarrinho(Carrinho *c, int idRemover) {
     // - diminuir o tamanho da array por 1 pra empurrar pra fora o elemento
     // - aplicar alg de ordenacao
     if (unico) {
-        trocar(&c->produtos[removerInd], &c->produtos[c->quantidade - 1]);
+        trocarProdutos(&c->produtos[removerInd],
+                       &c->produtos[c->quantidade - 1]);
         c->quantidade--;
         ordenarSelecao(c->produtos, c->quantidade);
     }
