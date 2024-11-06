@@ -102,7 +102,7 @@ void menu() {
             printf(">> ");
 
             fgets(regiBuffer, MAX_BUFFER, stdin);
-            resultadoProd = sscanf(regiBuffer, "%s", novoNome);
+            resultadoProd = sscanf(regiBuffer, "%1000s", novoNome);
 
             if (resultadoProd == 1) {
                 strcpy(novoProduto.nome, novoNome);
