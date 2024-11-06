@@ -10,7 +10,7 @@ int main() {
     return 0;
 }
 
-void trocar(Produto *a, Produto *b) {
+void trocarProdutos(Produto *a, Produto *b) {
     Produto temp = *a;
     *a = *b;
     *b = temp;
@@ -24,7 +24,7 @@ void ordenarSelecao(Produto *p, int size) {
                 menor = j;
             }
         }
-        trocar(&p[i], &p[menor]);
+        trocarProdutos(&p[i], &p[menor]);
     }
 }
 
