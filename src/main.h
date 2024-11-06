@@ -42,8 +42,6 @@ void infoProduto(Produto p, int incluirN);
 int temNoCarrinho(Carrinho c, int novoId);
 int temNoSistema(Sistema s, int novoId);
 
-Produto pegarProdutoPorCodigo(Sistema s, int id);
-
 void comprarProduto(Sistema s, Carrinho *c, int novoId);
 void visualizarCarrinho(Carrinho c);
 void removerDoCarrinho(Carrinho *c, int idRemover);

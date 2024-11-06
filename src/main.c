@@ -425,21 +425,3 @@ float obterTotal(Carrinho *c) {
     }
     return total;
 }
-
-Produto pegarProdutoPorCodigo(Sistema s, int id) {
-    // eu implementei esta funcao pois ela tava no documento explicativo, mas
-    // ela acabou nao sendo muito necessaria.
-    int encontrado = 0;
-    int j;
-    for (int i = 0; i < s.quantidade; i++) {
-        if (s.produtos[i].id == id) {
-            encontrado = 1;
-            j = i;
-        }
-    }
-    if (!encontrado) {
-        return (Produto){-1, "Erro", 0, 0};
-    } else {
-        return s.produtos[j];
-    }
-}
