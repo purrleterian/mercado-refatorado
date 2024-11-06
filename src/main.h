@@ -1,4 +1,9 @@
 #ifndef MYHEADER_H
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
 #define MYHEADER_H
 
 #define MAX_NOME 1000
@@ -31,9 +36,9 @@ typedef struct {
 } Sistema;
 
 void trocar(Produto *a, Produto *b);
-void selectionSort(Produto *p, int size);
+void ordenarSelecao(Produto *p, int size);
 
-void menu();
+int menu();
 
 void banner(const char s[]);
 void linhaDiv(int n, char c);
@@ -51,5 +56,8 @@ void cadastrarProduto(Sistema *s, Produto p);
 
 void finalizarCompras(Carrinho *c);
 float obterTotal(Carrinho *c);
+
+Sistema sistemaMercado;
+Carrinho carrinhoMercado;
 
 #endif
