@@ -30,10 +30,8 @@ void trocar(Produto *a, Produto *b) {
 }
 
 void selectionSort(Produto *p, int size) {
-    int smallest;
-
     for (int i = 0; i < size; i++) {
-        smallest = i;
+        int smallest = i;
         for (int j = i; j < size; j++) {
             if (p[j].id < p[smallest].id) {
                 smallest = j;
@@ -413,11 +411,10 @@ float obterTotal(Carrinho *c) {
     // adquirir o total passando por todos os items no carrinhos, lembrando
     // de levar em consideracao os descontos
     float total = 0;
-    float preco;
     for (int i = 0; i < c->quantidade; i++) {
-        preco = (c->produtos[i].preco -
-                 (c->produtos[i].preco * c->produtos[i].desconto)) *
-                c->produtos[i].n;
+        float preco = (c->produtos[i].preco -
+                       (c->produtos[i].preco * c->produtos[i].desconto)) *
+                      c->produtos[i].n;
         printf("* %s x %d - %.2f\n", c->produtos[i].nome, c->produtos[i].n,
                preco);
 
