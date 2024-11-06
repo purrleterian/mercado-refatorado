@@ -1,12 +1,15 @@
 #include "main.h"
 
 int main() {
+    Sistema sistemaMercado;
+    Carrinho carrinhoMercado;
+
     carrinhoMercado.quantidade = 0;
     sistemaMercado.quantidade = 0;
 
     // Loop infinito gerenciado pela variavel 'rodando', assim posso parar o
     // loop alterando-a
-    while (menu() != 0);
+    while (menu(&sistemaMercado, &carrinhoMercado) != 0);
     return 0;
 }
 

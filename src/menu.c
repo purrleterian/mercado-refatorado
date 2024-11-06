@@ -1,6 +1,6 @@
 #include "main.h"
 
-int menu() {
+int menu(Sistema *sistemaMercado, Carrinho *carrinhoMercado) {
     // Buffer pra guardar o input do usuario que determina a acao
     char escolhaFluxo[MAX_BUFFER];
 
@@ -109,7 +109,7 @@ int menu() {
 
             // se nenhum erro foi registrado no caminho, cadastrar o produto
             if (!teveErro) {
-                cadastrarProduto(&sistemaMercado, novoProduto);
+                cadastrarProduto(sistemaMercado, novoProduto);
             }
 
             break;
@@ -123,7 +123,7 @@ int menu() {
             fgets(idBuffer, MAX_BUFFER, stdin);
             int resultadoCarr = sscanf(idBuffer, "%d", &idNovoCarrinho);
             if (resultadoCarr == 1) {
-                comprarProduto(sistemaMercado, &carrinhoMercado,
+                comprarProduto(*sistemaMercado, carrinhoMercado,
                                idNovoCarrinho);
             } else {
                 printf("\nErro ao receber input\n");
@@ -140,7 +140,7 @@ int menu() {
             fgets(idRemoverBuffer, MAX_BUFFER, stdin);
             int resultadoRemover = sscanf(idRemoverBuffer, "%d", &idRemover);
             if (resultadoRemover == 1) {
-                removerDoCarrinho(&carrinhoMercado, idRemover);
+                removerDoCarrinho(carrinhoMercado, idRemover);
 
             } else {
                 printf("\nErro ao receber input\n");
@@ -149,11 +149,11 @@ int menu() {
             break;
 
         case 4:
-            listarProdutos(sistemaMercado);
+            listarProdutos(*sistemaMercado);
             break;
 
         case 5:
-            visualizarCarrinho(carrinhoMercado);
+            visualizarCarrinho(*carrinhoMercado);
             break;
 
         case 6:
@@ -166,11 +166,11 @@ int menu() {
             banner("Recibo");
 
             linhaDiv(35, '*');
-            printf("Total: %.2f\n", obterTotal(&carrinhoMercado));
+            printf("Total: %.2f\n", obterTotal(carrinhoMercado));
 
             linhaDiv(35, '*');
             printf("\n");
-            finalizarCompras(&carrinhoMercado);
+            finalizarCompras(carrinhoMercado);
             break;
 
         case 7:
