@@ -29,15 +29,15 @@ void trocar(Produto *a, Produto *b) {
     *b = temp;
 }
 
-void selectionSort(Produto *p, int size) {
+void ordenarSelecao(Produto *p, int size) {
     for (int i = 0; i < size; i++) {
-        int smallest = i;
+        int menor = i;
         for (int j = i; j < size; j++) {
-            if (p[j].id < p[smallest].id) {
-                smallest = j;
+            if (p[j].id < p[menor].id) {
+                menor = j;
             }
         }
-        trocar(&p[i], &p[smallest]);
+        trocar(&p[i], &p[menor]);
     }
 }
 
@@ -324,7 +324,7 @@ void comprarProduto(Sistema s, Carrinho *c, int novoId) {
         printf("Produto com ID %d nao registrado no sistema\n", novoId);
     }
 
-    selectionSort(c->produtos, c->quantidade);
+    ordenarSelecao(c->produtos, c->quantidade);
 }
 
 void removerDoCarrinho(Carrinho *c, int idRemover) {
@@ -349,7 +349,7 @@ void removerDoCarrinho(Carrinho *c, int idRemover) {
     if (unico) {
         trocar(&c->produtos[removerInd], &c->produtos[c->quantidade - 1]);
         c->quantidade--;
-        selectionSort(c->produtos, c->quantidade);
+        ordenarSelecao(c->produtos, c->quantidade);
     }
 }
 
@@ -393,7 +393,7 @@ void cadastrarProduto(Sistema *s, Produto p) {
         ++s->quantidade;
     }
 
-    selectionSort(s->produtos, s->quantidade);
+    ordenarSelecao(s->produtos, s->quantidade);
 }
 
 void finalizarCompras(Carrinho *c) {
